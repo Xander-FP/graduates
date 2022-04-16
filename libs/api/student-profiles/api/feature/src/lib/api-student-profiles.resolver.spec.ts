@@ -8,7 +8,11 @@ describe('ApiStudentProfileResolver', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [ApiStudentProfileResolver,ApiStudentProfileService,CommandBus],
+      providers: [
+        ApiStudentProfileResolver,
+        ApiStudentProfileService,
+        CommandBus,
+      ],
     }).compile();
 
     resolver = module.get<ApiStudentProfileResolver>(ApiStudentProfileResolver);
@@ -16,5 +20,14 @@ describe('ApiStudentProfileResolver', () => {
 
   it('should be defined', () => {
     expect(resolver).toBeDefined();
+  });
+
+  describe('when the getStudent method is called ', () => {
+    describe('and the student exists', () => {
+      it('should return the student object', () => {});
+    });
+    describe('and the student does not exist', () => {
+      it('should ', () => {});
+    });
   });
 });
